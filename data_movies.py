@@ -1,0 +1,41 @@
+users_feedback_movies = {'The Hobbit': {'Mary': 2.5, 
+		                             'Peter': 3.0,
+		                             'Stuart': 2.5, 
+		                             'Paul': 3.0, 
+		                             'Suzane': 3.0},
+                  
+                  'The Lord of the Rings': {'Mary': 3.5, 
+		                             'Peter': 3.5,
+		                             'Stuart': 3.0, 
+		                             'Jessica': 3.5, 
+		                             'Paul': 4.0, 
+		                             'Suzane': 4.0,
+                                 'Fred': 4.5},
+                  
+                  'Star Trek': {'Mary': 3.0, 
+		                             'Peter': 1.5,
+		                             'Jessica': 3.0, 
+		                             'Paul': 2.0},
+                  
+                  'The Terminator': {'Mary': 3.5, 
+		                             'Peter': 5.0,
+		                             'Stuart': 3.5, 
+		                             'Jessica': 4.0, 
+		                             'Paul': 3.0, 
+		                             'Suzane': 5.0,
+                                 'Fred': 4.0},
+                  
+                  'Norbit': {'Mary': 2.5, 
+		                             'Peter': 3.0,
+		                             'Jessica': 2.5, 
+		                             'Paul': 2.0, 
+		                             'Suzane': 3.5,
+                                 'Fred': 1.0},
+                  
+                  'Star Wars': {'Mary': 3.0, 
+		                             'Peter': 3.5,
+		                             'Stuart': 4.0, 
+		                             'Jessica': 4.5, 
+		                             'Paul': 3.0, 
+		                             'Suzane': 3.0}               
+}
