@@ -1,4 +1,4 @@
-from .data import users_feedback
+from .datasets.data import users_feedback
 import math
 
 ## Função que calcura a similaridade entre dois usuários, baseado na distância euclidiana
