@@ -27,3 +27,9 @@ def get_similarities(dataset,user):
                 if otheruser != user]
     similarity.sort().reverse()
     return similarity
+
+def load_movielen():
+    movies = {}
+    for row in open('datasets/u.item',encoding='ISO-8859-1'):
+        (id,title) = row.split('|')[0:2]
+        movies[id] = title
