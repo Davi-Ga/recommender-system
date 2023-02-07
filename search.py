@@ -33,3 +33,9 @@ def load_movielen():
     for row in open('datasets/u.item',encoding='ISO-8859-1'):
         (id,title) = row.split('|')[0:2]
         movies[id] = title
+        
+    dataset={}
+    for row in open('datasets/u.data'):
+        (user,movie_id,rating,time) = row.split('\t')
+        dataset.setdefault(user,{})
+        dataset[user][movies[movie_id]] = float(rating)
