@@ -28,14 +28,20 @@ def get_similarities(dataset,user):
     similarity.sort().reverse()
     return similarity
 
+##Função que abre o arquivo de feedback de usuários e retorna um dicionário com os dados
 def load_movielen():
     movies = {}
+    ##Abre o arquivo de filmes e adiciona o id e o título do filme ao dicionário movies
     for row in open('datasets/u.item',encoding='ISO-8859-1'):
         (id,title) = row.split('|')[0:2]
         movies[id] = title
         
     dataset={}
+    ##Abre o arquivo de feedback de usuários e adiciona o id do usuário, o id do filme e a nota ao dicionário dataset
     for row in open('datasets/u.data'):
         (user,movie_id,rating,time) = row.split('\t')
+        ##Caso o usuário não esteja presente no dataset, ele será adicionado
         dataset.setdefault(user,{})
         dataset[user][movies[movie_id]] = float(rating)
+    
+    return dataset
