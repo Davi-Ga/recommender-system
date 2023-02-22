@@ -8,20 +8,24 @@ def calculate_item_similarities(dataset):
         
     return similarities
 
-def get_item_recommendations(dataset,user):
+def get_item_recommendations(user_dataset,user,similarities):
     totals={}
-    simSums={}
-    item_similarities=calculate_item_similarities(dataset)
+    scores={}
+    user_scores=user_dataset[user]
     
-    for (item,rating) in dataset[user].items():
-        for (similarity,item2) in item_similarities[item].items():
-            if item2 in dataset[user]:
+    for (item,score) in user_scores.items():
+        for (similarity,item2) in similarities[item]:
+            if item2 in user_scores:
                 continue
+            scores.setdefault(item2,0)
+            scores[item2]=similarity*score
             totals.setdefault(item2,0)
-            totals[item2]+=similarity*rating
-            simSums.setdefault(item2,0)
-            simSums[item2]+=similarity
-    rankings=[(total/simSums[item],item) for item,total in totals.items()]
-    rankings.sort()
-    rankings.reverse()
-    return rankings
+            totals[item2]+=similarity
+            
+    recommendations=[(score/totals[item],item) for item,score in scores.items()]
+    recommendations.sort()
+    recommendations.reverse()
+    
+    return recommendations
+           
+  
